@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/nav';
+import AddNote from './components/AddNote';
+import YourNotes from './components/YourNotes';
+import {useState} from 'react';
+
+var Data = {
+  Notes:[
+    ]
+}
 
 function App() {
+  let [notes,setNotes] = useState([{id:0,title:"demo",content:"maki"}]);
+
+  const updateData = (note) => {
+
+      
+
+      note.id = notes[notes.length-1] + 1;
+      setNotes([...notes,note])
+      console.log(notes)
+
+
+  }
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav/>
+      <AddNote addNote = {updateData}/>
+      <YourNotes notes={notes} />
+      
     </div>
   );
 }

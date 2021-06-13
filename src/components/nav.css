@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: rgb(51, 50, 50);
+    color: whitesmoke;
+}
+
+.nav-left{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-left li{
+    margin: 0 20px;
+    padding: 5px 10px;
+    background-color: tomato;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(131, 125, 125, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+.nav-right{
+    display: flex;
+    flex-direction: row;
+}
+.nav-right li{
+    margin: 0 20px;
+    padding: 5px 10px;
+    background-color: rgb(105, 71, 255);
+    border-radius: 4px;
+    
+}
+
+.navLeft-before{
+    margin: auto;
+}
+
+.logo{
+    width: 20px;
+    height: 20px;
+}

@@ -1,0 +1,87 @@
+.YourNotesContainer{
+    background-color: rgb(218, 146, 146);
+    
+    height: 400px;
+    padding: 30px;
+    
+}
+
+.cardHolder{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 6px;
+    overflow: auto;
+    background-color: saddlebrown;
+}
+
+
+.card{
+
+    
+    width: 200px;
+    height: 275px;
+    padding: 10px;
+    overflow: auto;
+    border-radius: 6px;
+    background-color: rgb(104, 132, 218);
+    box-shadow: 2px 2px 2px 2px rgb(104, 102, 102);
+    cursor: pointer;
+    margin: 20px 0;
+    transition-duration: 300ms;
+    transition-property: all;
+    
+
+}
+
+.card:hover{
+    background-color: limegreen;
+    box-shadow: 2px 2px 4px 4px rgb(59, 52, 52);
+
+}
+.card::-webkit-scrollbar {
+    display: none;
+}
+
+.cardHolder::-webkit-scrollbar{
+    display: none;
+}
+
+.cardTitle{
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-size: x-large;
+}
+.cardContent{
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-size: small;
+}
+
+.yourNotesTitle{
+    margin-left: 200px;
+    display: inline;
+}
+
+
+.searchNotes{
+    float: right;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: rgb(200, 102, 91);
+    margin: 5px auto;
+    color: rgb(216, 208, 224);
+    outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .yourNotesTitle{
+        display: block;
+        margin: 10px auto;
+    }
+    .searchNotes{
+
+    }
+  }
