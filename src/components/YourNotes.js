@@ -10,28 +10,33 @@ export default function YourNotes(props) {
       impedit enim
      natus? Quae perferendis eius velit quidem.`
      let title = "title";
-     let show;
+     let showit = false;
+     let showNotes =  props.notes?props.notes.map((note) => {
+        return(
+            <Notes id={note.id} openCard = {props.openCard} closeCard = {props.closeCard} title={note.title} delNote = {props.delNote} content={note.content} color = {note.color} font = {note.font} bgColor = {note.bgColor} clicked={props.editNote}/>
+        )
+}):"Nothing to show here";
+    let showNothing = <div>
+        <button onClick={props.closeCard} >Close</button>
+    </div>
+    console.log(props.cardClick)
     
-     
+   
   
     return (
         <section className="YourNotesContainer">
             
 
-            <h2 style={{color:"red"}} className="yourNotesTitle">Your Notes</h2>
+            <h2  className="yourNotesTitle" >Your Notes</h2>
             
-            <input type="text" placeholder = "search notes" className="searchNotes" />
+            <input type="text" onChange={(e) => {props.search(e.target.value)}} placeholder = "search notes" className="searchNotes" />
            
             
             
             <br />
                 <div className="cardHolder">
-                    
-                {props.notes?props.notes.map((note) => {
-                        return(
-                            <Notes id={note.id} title={note.title} content={note.content}/>
-                        )
-                }):"Nothing to show here"}
+                    {props.cardClick?showNotes:showNothing}
+               
                 </div>
         </section>
     )
