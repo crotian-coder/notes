@@ -146,6 +146,12 @@
 
 }
 
+
+.zoomCard{
+    width: 90%;
+    margin: auto;
+}
+
 @media only screen and (max-width: 600px) {
     .yourNotesTitle{
         display: block;

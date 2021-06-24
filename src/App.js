@@ -166,13 +166,33 @@ const openPopUp = () => {
   setPopUp(true)
 }
 const [cardClick,setCardClick] = useState(true);
-const openCard = () => {
+const [zoomCard,setZoomCard] = useState({id:0});
+const openCard = (id,title,content) => {
   setCardClick(false);
-  console.log("yess")
+  console.log("yess",id,title,content);
+  let change = zoomCard;
+  change.id = id;
+  change.content = content;
+  change.title = title;
+  setZoomCard(change);
 }
 const closeCard = () => {
   setCardClick(true);
 }
+const saveCard = () => {
+  setCardClick(true);
+  console.log("zoomCard id",zoomCard.id)
+  presentUserNotes.forEach((note) => {
+    if(zoomCard.id == note.id){
+      console.log(note)
+      console.log(zoomCard.content)
+      
+      // note.content = zoomCardContent.innerText;
+
+    }
+  })
+}
+
 const delNote = (id) => {
   console.log("delete this",id)
   let newNotes = notes.filter(
@@ -200,7 +220,7 @@ const delNote = (id) => {
       <Nav  signOpen={openPopUp} chBgColor = {changeNoteBgColor} chColor = {changeNoteColor} presentUser={presentAuthor} chFont = {changeNoteFont} search={searchNotes} />
       
       <AddNote addNote = {updateData} lots={lots} noteProps={noteProps}/>
-      <YourNotes  cardClick={cardClick} openCard={openCard} closeCard = {closeCard} notes={notes} search={searchNotes} delNote={delNote} editNote={editNote}/>
+      <YourNotes  cardClick={cardClick} zoomCard={zoomCard} saveCard={saveCard} openCard={openCard} closeCard = {closeCard} notes={notes} search={searchNotes} delNote={delNote} editNote={editNote}/>
       
     </div>
   );

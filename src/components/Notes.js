@@ -6,7 +6,7 @@ export default function Notes(props) {
 
     const clicked = () => {
         
-        props.openCard();
+        props.openCard(props.id,props.title,props.content);
         // let title = document.getElementById("noteTitle").style.backgroundColor = props.bgColor;
         // console.log(props.bgColor,"note color")
         // console.log(props.font,"note font")
